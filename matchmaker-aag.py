@@ -65,8 +65,10 @@ compatibility = []
 # print("You entered: " + UserResponse2String)
 for i in range(len(QUESTION)):
     userResponse = int(input(QUESTION[i]))
-# UserResponse2String = str(input)
-#Here I tried completing the validation and I couldn't seem to figure out what I was doing wrong
+# Here I tried completing the validation and I couldn't seem to figure out what I was doing wrong.
+# So I tried putting str instead of int so I could put my if statement below.
+# This caused the code to crash multiple times.
+
     response.append(userResponse)
 
 # if not userResponse.isnumeric():
