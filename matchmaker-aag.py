@@ -4,35 +4,53 @@
 # Constants
 INTRODUCTION = '''
 
-      *****************************************
-     *               Matchmaker 1.1            *
-   *      Helping you find luv since 2019        *
- *                  Cupidsoft, Inc.                *
-******************************************************
+          *********                **********
+        *          *              *           *
+      *             *************
+    *               Matchmaker 1.0                *
+  *      The Most Intresting Man Of The Year       *
+ *                  Cupidsoft, Inc.                  *
+***************************************************** **
+*                       Hello,                           *
+*    My name name is Angelo Goduto and I am looking      *
+ *   for the one! Below are going to be a few questions  *
+  *  that I want to ask and depending on how you answer *
+   * these questions will determine how compatable we  *
+    * are. You should answer each question with       *
+     * a number rating of 1 thru 5. 1 meaning        *
+      * you strongly disagree, 3 meaning youre      *
+       * neutral, and 5 meaning you strongly       *
+        *               agree.                    *
+         *                                       *
+          *     Everything you put will         *
+           *       possibly change your        *
+            *            future               *
+             *                               *
+              *         Forever ...         *    
+                *                          *
+                  *                      *
+                    *                  *
+                      *            *
+                        *        *
+                          *    *
+                            **
 
-This program figures out if you and I are meant to be.
-You will answer 5 questions. To each question, answer 5
-if you strongly agree, 4 if you agree, 3 if you neither
-agree nor disagree, 2 if you disagree, and 1 if you
-strongly disagree.
-
-Our happiness depends on you. Don't let us down ...
 '''
 
 QUESTION = [
-    'Hawkeyes Football is the best',
-    'European soccer is the greatest sport in the world!',
-    'PHP is the best computer language',
-    'Computer Science is the best major.',
-    'Are you glad this is the last question?'
+    'The Blackhawks are the best hockey team.',
+    'Philosphy is the best subject.',
+    'HTML is the best code.',
+    'Flying is the best way to travel.',
+    'The winter is the best time of year.'
 ]
 
 DESIRED_RESPONSE = [
     5, # strongly agree
-    2, # disagree
     1, # strongly disagree
+    4, # agree
     5, # strongly agree
-    1  # strongly disafree
+    2  # disagree
 
 ]
 
@@ -43,16 +61,23 @@ print(INTRODUCTION)
 response = []
 compatibility = []
 
-# Ask all questions.
+# UserResponse2String = str(input(("Enter a number between 1 and 5.\n")))
+# print("You entered: " + UserResponse2String)
 for i in range(len(QUESTION)):
     userResponse = int(input(QUESTION[i]))
-        # Todo: Validate response and ask question again if necessary.
+# UserResponse2String = str(input)
+#Here I tried completing the validation and I couldn't seem to figure out what I was doing wrong
     response.append(userResponse)
+
+# if not userResponse.isnumeric():
+#    print("This is not a number.")
+# else:
+#    print("This is a valid number.")
+
 
     questionCompatibility = 5 - abs(userResponse - DESIRED_RESPONSE[i])
     compatibility.append(questionCompatibility)
 
-    # String formatting with parameters and placeholders
     print("Question %d compatability: %d\n" % (i+1, questionCompatibility))
 
 totalCompatiblity = 0
@@ -62,4 +87,12 @@ for c in compatibility:
 totalCompatiblity *= 100 / MAX_SCORE
 print('Total Compatibility: %d\n\n' % (totalCompatiblity))
 
-# Todo: Determine compatibility ranges.
+if totalCompatiblity >= 85:
+    print("What's your phone number? We should start talking.")
+elif totalCompatiblity >= 65:
+    print("Maybe there's a view things we can change to make it better.")
+elif totalCompatiblity >= 40:
+  print("I guess we should be seeing other people.")
+elif totalCompatiblity >= 0:
+  print("Please don't talk to me...")
+
