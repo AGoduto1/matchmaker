@@ -1,5 +1,6 @@
 # Angelo Goduto
 # Matchmaker-aag
+# Taken from the code of EnterANumberBetween1And5 by Eric Pogue
 
 # Constants
 INTRODUCTION = '''
